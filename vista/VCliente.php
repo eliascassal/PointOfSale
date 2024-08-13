@@ -14,7 +14,7 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Lista de usuarios registrados</h3>
+          <h3 class="card-title">Lista de clientes registrados</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -28,19 +28,19 @@
                 <th>Ultimo acceso</th>
                 <th>Fecha de registro</th>
                 <td>
-                  <button class="btn btn-primary" onclick="MNuevoUsuario()">Nuevo</button>
+                  <button class="btn btn-primary" onclick="MNuevoCliente()">Nuevo</button>
                 </td>
               </tr>
             </thead>
             <tbody>
               <?php
-              $usuario=ControladorUsuario::ctrInfoUsuarios();
-              foreach($usuario as $value){
+              $cliente=ControladorCliente::ctrInfoClientes();
+              foreach($cliente as $value){
               ?>
 
               <tr>
-                <td><?php echo $value["id_usuario"];?></td>
-                <td><?php echo $value["login_usuario"];?></td>
+                <td><?php echo $value["id_cliente"];?></td>
+                <td><?php echo $value["login_cliente"];?></td>
                 <td><?php echo $value["perfil"];?></td>
                 <td><?php 
                 if($value["estado"]==1){
@@ -57,10 +57,10 @@
                 <td><?php echo $value["fecha_registro"];?></td>
                 <td>
                   <div class="btn-group">
-                    <button class="btn btn-secondary" onclick="MEditUsuario(<?php echo $value["id_usuario"];?>)">
+                    <button class="btn btn-secondary" onclick="MEditCliente(<?php echo $value["id_cliente"];?>)">
                       <i class="fas fa-edit"></i>
                     </button>
-                    <button class="btn btn-danger" onclick="MEliUsuario(<?php echo $value["id_usuario"];?>)">
+                    <button class="btn btn-danger" onclick="MEliCliente(<?php echo $value["id_cliente"];?>)">
                       <i class="fas fa-trash"></i>
                     </button>
                   </div>

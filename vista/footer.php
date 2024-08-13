@@ -6,7 +6,7 @@
     Un sistema de punto de venta
   </div>
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2024 <a href="https://ekesoft.net">Ekesoft</a>.</strong> Derechos reservados
+  <strong>Copyright &copy; 2024 <a href="https://ekesoft.net">EliasCassal </a>.</strong> Derechos reservados
 </footer>
 </div>
 <!-- ./wrapper -->
@@ -36,6 +36,9 @@
 <script src="assest/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <script src="assest/js/usuario.js"></script>
+<script src="assest/js/cliente.js"></script>
+<!--<script src="assest/js/producto.js"></script>
+<script src="assest/js/factura.js"></script>-->
 
 <!--===============
 seccion de modals
