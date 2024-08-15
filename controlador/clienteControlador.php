@@ -25,12 +25,13 @@ class ControladorCliente
   {
     require "../modelo/clienteModelo.php";
 
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
     $data = array(
-      "logincliente" => $_POST["login"],
-      "password" => $password,
-      "perfil" => "Moderador"
+      "rsocial" => $_POST["rsocial"],
+      "nit" => $_POST["nit"],
+      "direccion" => $_POST["direccion"],
+      "ncliente" => $_POST["ncliente"],
+      "telefono" => $_POST["telefono"],
+      "email" => $_POST["email"]
     );
 
     $respuesta = ModeloCliente::mdlRegCliente($data);

@@ -1,5 +1,5 @@
 function MNuevoCliente(){
-  $("#modal-default").modal("show")
+  $("#modal-lg").modal("show")
 
   var obj=""
   $.ajax({
@@ -7,7 +7,7 @@ function MNuevoCliente(){
     url:"vista/Cliente/FNuevoCliente.php",
     data:obj,
     success:function(data){
-      $("#content-default").html(data)
+      $("#content-lg").html(data)
     }
 
   })
@@ -17,7 +17,7 @@ function MNuevoCliente(){
 
 function regCliente(){
 
-  var formData=new FormData($("#FRegUsuario")[0])
+  var formData=new FormData($("#FRegCliente")[0])
 
     $.ajax({
       type:"POST",

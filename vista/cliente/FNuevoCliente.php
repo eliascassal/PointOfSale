@@ -1,23 +1,57 @@
-<form action="" id="FRegUsuario">
+<form action="" id="FRegCliente">
   <div class="modal-header bg-primary">
-    <h4 class="modal-title">Registro nuevo usuario</h4>
+    <h4 class="modal-title">Registro nuevo Cliente</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+
   <div class="modal-body">
-    <div class="form-group">
-      <label for="">Login Usuario</label>
-      <input type="text" class="form-control" name="login" id="login">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="">Razon social</label>
+          <input type="text" class="form-control" name="rsocial" id="rsocial">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="">NIT/CI</label>
+          <input type="text" class="form-control" name="nit" id="nit">
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="">Password</label>
-      <input type="password" class="form-control" name="password" id="password">
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="">Direccion</label>
+          <input type="text" class="form-control" name="direccion" id="direccion">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="">Nombre</label>
+          <input type="text" class="form-control" name="ncliente" id="ncliente">
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="">Repetir password</label>
-      <input type="password" class="form-control" name="vrPassword" id="vrPassword">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="">Telefono </label>
+          <input type="text" class="form-control" name="telefono" id="telefono">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="">E-mail</label>
+          <input type="text" class="form-control" name="email" id="email">
+        </div>
+      </div>
     </div>
+
+
   </div>
   <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -26,41 +60,44 @@
 </form>
 
 <script>
-$(function () {
-  $.validator.setDefaults({
-    submitHandler: function () {
-      regUsuario()
-    }
-  });
-  
-  $('#FRegUsuario').validate({
-    rules: {
-      login: {
-        required: true,
-        minlength: 3,
-      },
-      password: {
-        required: true,
-        minlength: 3
-      },
-      vrPassword: {
-        required: true,
-        minlength: 3
-      },
-    },
+  $(function() {
+    $.validator.setDefaults({
+      submitHandler: function() {
+        regCliente()
+      }
+    });
 
-    errorElement: 'span',
-    errorPlacement: function (error, element) {
-      error.addClass('invalid-feedback');
-      element.closest('.form-group').append(error);
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass('is-invalid');
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass('is-invalid');
-    }
+    $('#FRegCliente').validate({
+      rules: {
+        rsocial: {
+          required: true,
+          minlength: 5,
+        },
+        nit: {
+          required: true,
+          minlength: 7
+        },
+        nombre: {
+          required: true,
+          minlength: 5
+        },
+        emailbre: {
+          required: true,
+          email: true
+        },
+      },
+
+      errorElement: 'span',
+      errorPlacement: function(error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function(element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
   });
-});
 </script>
-

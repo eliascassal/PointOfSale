@@ -15,24 +15,15 @@ class ModeloCliente{
   }
 
   static public function mdlRegCliente($data){
-    $loginCliente=$data["loginCliente"];
-    $password=$data["password"];
-    $perfil=$data["perfil"];
+      $rsocial = $data["rsocial"];
+      $nit = $data["nit"];
+      $direccion = $data["direccion"];
+      $ncliente = $data["ncliente"];
+      $telefono = $data["telefono"];
+      $email = $data["email"];
 
-    $stmt=Conexion::conectar()->prepare("insert into cliente(login_cliente, password, perfil) values('$loginCliente', '$password', '$perfil')");
-
-    if($stmt->execute()){
-      return "ok";
-    }else{
-      return "error";
-    }
-
-    $stmt->close();
-    $stmt->null();
-  }
-
-  static public function mdlActualizarAcceso($fechaHora, $id){
-    $stmt=Conexion::conectar()->prepare("update cliente set ultimo_login='$fechaHora' where id_cliente='$id'");
+    $stmt=Conexion::conectar()->prepare("insert into cliente(razon_social_cliente, nit_ci_cliente, direccion_cliente, nombre_cliente, telefono_cliente, email_cliente) 
+    values('$rsocial', '$nit', '$direccion', '$ncliente', '$telefono', 'email')");
 
     if($stmt->execute()){
       return "ok";
@@ -43,6 +34,7 @@ class ModeloCliente{
     $stmt->close();
     $stmt->null();
   }
+
 
   static public function mdlInfoCliente($id){
     $stmt=Conexion::conectar()->prepare("select * from cliente where id_cliente=$id");

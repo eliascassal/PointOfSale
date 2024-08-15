@@ -22,11 +22,12 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Login</th>
-                <th>Perfil</th>
-                <th>Estado</th>
-                <th>Ultimo acceso</th>
-                <th>Fecha de registro</th>
+                <th>Razon Social</th>
+                <th>Nit/CI</th>
+                <th>Direccion</th>
+                <th>Nombre</th>
+                <th>telefono</th>
+                <th>Email</th>
                 <td>
                   <button class="btn btn-primary" onclick="MNuevoCliente()">Nuevo</button>
                 </td>
@@ -40,21 +41,12 @@
 
               <tr>
                 <td><?php echo $value["id_cliente"];?></td>
-                <td><?php echo $value["login_cliente"];?></td>
-                <td><?php echo $value["perfil"];?></td>
-                <td><?php 
-                if($value["estado"]==1){
-                  ?>
-                  <span class="badge badge-success">Activo</span>
-                  <?php
-                }else{
-                  ?>
-                  <span class="badge badge-danger">Inactivo</span>
-                  <?php
-                }
-                  ?></td>
-                <td><?php echo $value["ultimo_login"];?></td>
-                <td><?php echo $value["fecha_registro"];?></td>
+                <td><?php echo $value["razon_social_cliente"];?></td>
+                <td><?php echo $value["nit_ci_cliente"];?></td>
+                <td><?php echo $value["direccion_cliente"];?></td>
+                <td><?php echo $value["nombre_cliente"];?></td>
+                <td><?php echo $value["telefono_cliente"];?></td>
+                <td><?php echo $value["email_cliente"];?></td>
                 <td>
                   <div class="btn-group">
                     <button class="btn btn-secondary" onclick="MEditCliente(<?php echo $value["id_cliente"];?>)">
